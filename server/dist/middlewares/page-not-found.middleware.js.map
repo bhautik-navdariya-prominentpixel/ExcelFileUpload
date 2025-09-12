@@ -1,0 +1,1 @@
+{"version":3,"file":"page-not-found.middleware.js","sourceRoot":"","sources":["../../src/middlewares/page-not-found.middleware.ts"],"names":[],"mappings":";;;;;;AACA,qFAA4D;AAErD,MAAM,sBAAsB,GAAG,CAAC,GAAY,EAAE,GAAa,EAAE,EAAE;IACpE,GAAG,CAAC,MAAM,CAAC,GAAG,CAAC,CAAC,IAAI,CAAC,wBAAa,CAAC,IAAI,CAAC,oBAAoB,CAAC,CAAC,CAAC;AACjE,CAAC,CAAC;AAFW,QAAA,sBAAsB,0BAEjC"}

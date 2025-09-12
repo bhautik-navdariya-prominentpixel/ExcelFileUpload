@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Excel File</title>
+  </head>
+  <body>
+    <h2>Upload Excel File</h2>
+
+    <form id="uploadForm">
+      <input type="file" id="excelFile" name="file" accept=".xlsx,.xls" required />
+      <button type="submit">Upload</button>
+    </form>
+
+    <script>
+      document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const fileInput = document.getElementById("excelFile");
+        if (!fileInput.files.length) {
+          alert("Please select a file!");
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", fileInput.files[0]);
+
+        try {
+          const response = await fetch("http://localhost:3000/excel-file/", {
+            method: "POST",
+            body: formData,
+          });
+
+          if (!response.ok) {
+            throw new Error(`Server error: ${response.status}`);
+          }
+
+          const result = await response.json();
+          delete result.data;
+          alert(JSON.stringify(result));
+        } catch (err) {
+          console.error("Upload failed", err);
+          alert(JSON.stringify(result));
+        }
+      });
+    </script>
+  </body>
+</html>
