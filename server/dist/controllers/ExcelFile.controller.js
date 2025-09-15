@@ -10,7 +10,9 @@ const excel_helper_1 = require("../common/helpers/excel.helper");
 const promises_1 = __importDefault(require("fs/promises"));
 const infocus_wastelinq_wq_sales_order_header_table_1 = __importDefault(require("../common/models/tables/infocus_wastelinq_wq_sales_order_header.table"));
 async function getUploadedData(req, res) {
-    const InfocusWastelinqWqSalesOrderHeaderData = await infocus_wastelinq_wq_sales_order_header_table_1.default.findAll();
+    const InfocusWastelinqWqSalesOrderHeaderData = await infocus_wastelinq_wq_sales_order_header_table_1.default.findAll({
+        order: ["salesOrderNumber"],
+    });
     return res.json(response_model_1.default.success(InfocusWastelinqWqSalesOrderHeaderData));
 }
 async function uploadExcelFile(req, res) {

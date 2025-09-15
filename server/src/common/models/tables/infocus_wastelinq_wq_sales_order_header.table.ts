@@ -48,7 +48,7 @@ InfocusWastelinqWqSalesOrderHeader.init(
     billToLocationId: DataTypes.INTEGER,
     salespersonId: DataTypes.INTEGER,
     importMasterId: DataTypes.INTEGER,
-    legacyNumber: DataTypes.INTEGER,
+    legacyNumber: DataTypes.STRING,
     logisticsStatusId: DataTypes.INTEGER,
     fileName: DataTypes.STRING,
     insertDatetimeUtc: DataTypes.DATE,

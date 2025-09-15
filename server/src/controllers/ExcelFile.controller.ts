@@ -5,7 +5,9 @@ import fs from "fs/promises";
 import InfocusWastelinqWqSalesOrderHeader from "../common/models/tables/infocus_wastelinq_wq_sales_order_header.table";
 
 export async function getUploadedData(req: Request, res: Response<ResponseModel<any>>) {
-  const InfocusWastelinqWqSalesOrderHeaderData = await InfocusWastelinqWqSalesOrderHeader.findAll();
+  const InfocusWastelinqWqSalesOrderHeaderData = await InfocusWastelinqWqSalesOrderHeader.findAll({
+    order: ["salesOrderNumber"],
+  });
   return res.json(ResponseModel.success(InfocusWastelinqWqSalesOrderHeaderData));
 }
 export async function uploadExcelFile(req: Request, res: Response<ResponseModel<any>>) {

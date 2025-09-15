@@ -37,7 +37,7 @@ InfocusWastelinqWqSalesOrderHeader.init({
     billToLocationId: sequelize_1.DataTypes.INTEGER,
     salespersonId: sequelize_1.DataTypes.INTEGER,
     importMasterId: sequelize_1.DataTypes.INTEGER,
-    legacyNumber: sequelize_1.DataTypes.INTEGER,
+    legacyNumber: sequelize_1.DataTypes.STRING,
     logisticsStatusId: sequelize_1.DataTypes.INTEGER,
     fileName: sequelize_1.DataTypes.STRING,
     insertDatetimeUtc: sequelize_1.DataTypes.DATE,
